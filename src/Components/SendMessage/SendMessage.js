@@ -4,23 +4,20 @@ import { Col, Container, Form, Row, Button } from 'react-bootstrap';
 
 const SendMessage = () => {
 	const [
-		emailData,
-		setEamilData
-	] = useState({});
-	const handleOnBlur = (e) => {
-		const field = e.target.name;
-		const value = e.target.value;
-		const newEmail = { ...emailData };
-		newEmail[field] = value;
-		setEamilData(newEmail);
-	};
+		success,
+		setSuccess
+	] = useState(false);
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(e.target);
 
 		emailjs
 			.sendForm('service_1so616a', 'template_p8rm3zn', e.target, 'user_3uPobN8PERnI2jN7MH1hk')
-			.then((res) => console.log(res))
+			.then((res) => {
+				if (res) {
+					setSuccess(true);
+				}
+			})
 			.catch((err) => console.log(err));
 	};
 	return (
@@ -33,30 +30,26 @@ const SendMessage = () => {
 							<Row>
 								<Col>
 									<Form.Label>Name</Form.Label>
-									<Form.Control type="text" name="name" onBlur={handleOnBlur} />
+									<Form.Control type="text" name="name" />
 								</Col>
 								<Col>
 									<Form.Label>Phone number</Form.Label>
-									<Form.Control type="tel" name="phone" onBlur={handleOnBlur} />
+									<Form.Control type="tel" name="phone" />
 								</Col>
 							</Row>
 							<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
 								<Form.Label>Email address</Form.Label>
-								<Form.Control
-									type="email"
-									name="user_email"
-									placeholder="name@example.com"
-									onBlur={handleOnBlur}
-								/>
+								<Form.Control type="email" name="user_email" placeholder="name@example.com" />
 							</Form.Group>
 							<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
 								<Form.Label>subject</Form.Label>
-								<Form.Control type="text" name="subject" placeholder="subject" onBlur={handleOnBlur} />
+								<Form.Control type="text" name="subject" placeholder="subject" />
 							</Form.Group>
 							<Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
 								<Form.Label>Example textarea</Form.Label>
-								<Form.Control as="textarea" name="message" rows={3} onBlur={handleOnBlur} />
+								<Form.Control as="textarea" name="message" rows={3} />
 							</Form.Group>
+							{success && <p style={{ color: 'green' }}>send successfully!</p>}
 							<Button type="submit" variant="success">
 								Send
 							</Button>

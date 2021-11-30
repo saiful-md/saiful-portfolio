@@ -20,18 +20,6 @@ const Navigation = () => {
 					>
 						Home
 					</Nav.Link>
-
-					<Nav.Link
-						as={NavLink}
-						className="text-decoration-none mx-2 text-white"
-						activeStyle={{
-							fontWeight: 'bold',
-							color: '#fff'
-						}}
-						to="/orderPlace"
-					>
-						Booked Tickets
-					</Nav.Link>
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>

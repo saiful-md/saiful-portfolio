@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Button } from 'react-bootstrap';
+import resume from '../../images/Resume (1).pdf';
 
 const AboutMe = () => {
 	return (
@@ -16,18 +17,34 @@ const AboutMe = () => {
 					with an end goal in mind. I pride myself on doing quality work and maintaining excellent
 					communication. Most of the time I work with JavaScript ReactJS
 				</h6>
+				<h6 style={{ color: 'green', fontWeight: '600' }}>mdsaifulislam2491@gmail.com</h6>
 				<Button variant="success">
-					<a style={{ textDecoration: 'none', color: 'black' }} href="https://github.com/saiful-md">
+					<a
+						style={{ textDecoration: 'none', color: 'black' }}
+						href="https://github.com/saiful-md"
+						target="_blank"
+						rel="noreferrer"
+					>
 						Github
 					</a>
 				</Button>
 				<Button style={{ margin: '0 20px' }} variant="success">
-					<a style={{ textDecoration: 'none', color: 'black' }} href="https://github.com/saiful-md">
+					<a
+						style={{ textDecoration: 'none', color: 'black' }}
+						href="https://www.linkedin.com/in/md-saiful-islam-1648b0218/"
+						target="_blank"
+						rel="noreferrer"
+					>
 						Linkdin
 					</a>
 				</Button>
 				<Button variant="success">
-					<a style={{ textDecoration: 'none', color: 'black' }} href="https://github.com/saiful-md">
+					<a
+						style={{ textDecoration: 'none', color: 'black' }}
+						href="https://drive.google.com/file/d/1LxOM7rbNul_Y5akFzq3KEfO7ZsUU4tAG/view?usp=sharing"
+						target="_blank"
+						rel="noreferrer"
+					>
 						Resume
 					</a>
 				</Button>

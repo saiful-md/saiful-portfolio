@@ -3,13 +3,13 @@ import AboutMe from './Components/AboutMe/AboutMe';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import MyProjects from './Components/MyProjects/MyProjects';
-import Navigation from './Components/Navigation/Navigation';
+// import Navigation from './Components/Navigation/Navigation';
 import SendMessage from './Components/SendMessage/SendMessage';
 
 function App() {
 	return (
 		<div>
-			<Navigation />
+			{/* <Navigation /> */}
 			<Header />
 			<AboutMe />
 			<MyProjects />
